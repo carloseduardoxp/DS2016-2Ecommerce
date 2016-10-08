@@ -11,8 +11,8 @@ public interface ICategoriaService {
 	void atualizar(Categoria categoria);
 
 	void excluir(Integer codigo);
-
-	List<Categoria> buscar(Categoria categoria);
+	
+	List<Categoria> buscarTodos();
 	
 	public Categoria buscarPorId(Integer codigo);
 

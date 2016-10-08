@@ -43,17 +43,17 @@ public class CategoriaService implements ICategoriaService {
 	public void excluir(@PathParam("codigo") Integer codigo) {
 		categoriaDao.excluir(codigo);
 	}
-
-	@Override
-	@GET
-	public List<Categoria> buscar(Categoria categoria) {
-		return categoriaDao.buscar(categoria);
-	}
 	
 	@GET
 	@Override
 	@Path("/{codigo}")
 	public Categoria buscarPorId(@PathParam("codigo") Integer codigo) {
 		return categoriaDao.buscarPorId(codigo);
+	}
+
+	@Override
+	@GET
+	public List<Categoria> buscarTodos() {
+		return categoriaDao.buscar(new Categoria());
 	}
 }

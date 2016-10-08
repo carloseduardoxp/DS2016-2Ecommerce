@@ -37,8 +37,8 @@ public class CategoriaService implements ICategoriaService {
 	
 	@Override
 	@WebMethod
-	public List<Categoria> buscar(@WebParam(name="categoria") Categoria categoria) {
-		return categoriaDao.buscar(categoria);
+	public List<Categoria> buscarTodos() {
+		return categoriaDao.buscar(new Categoria());
 	}
 
 	@Override
