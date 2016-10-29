@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -20,6 +22,8 @@ public class Categoria implements Serializable {
 	@Column(name="CD_CATEGORIA")
 	private Integer codigo;
 	
+	@NotNull(message="Nome da categoria não pode ser vazia")
+	@Size(min=3,max=100,message="Nome da categoria precisa ter entre {min} e {max} caracteres")
 	@Column(name="NM_CATEGORIA")
 	private String nome;
 

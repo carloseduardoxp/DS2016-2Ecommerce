@@ -2,11 +2,15 @@ package br.edu.iftm.model.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.executable.ValidateOnExecution;
+
 import br.edu.iftm.model.domain.Categoria;
 
 public interface ICategoriaService {
 
-	void salvar(Categoria categoria);
+	@ValidateOnExecution
+	void salvar(@Valid Categoria categoria);
 
 	void atualizar(Categoria categoria);
 
