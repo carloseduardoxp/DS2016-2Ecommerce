@@ -5,7 +5,7 @@ app.controller('categoriaControl',function($scope,$http) {
 	
 	$scope.salvar = function() {    	
     	if ($scope.categoria.codigo == undefined || $scope.categoria.codigo == '') {    		
-			$http.post(url,$scope.categoria).success(function(categoriaRetornada) {
+			$http.post(url,$scope.categoria).success(function(categoriaRetornada) {				
 				$scope.categorias.push(categoriaRetornada);
 				$scope.novo();
 				$scope.mensagens.push('Categoria salva com sucesso');
@@ -22,7 +22,6 @@ app.controller('categoriaControl',function($scope,$http) {
 				$scope.montaMensagemErro(erro.parameterViolations);
 			});
 		}		
-		$scope.pesquisar();
 	}
 	
 	$scope.montaMensagemErro = function(listaErro) {

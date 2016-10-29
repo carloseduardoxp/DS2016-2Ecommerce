@@ -19,8 +19,8 @@ public class CategoriaService implements ICategoriaService {
 	
 	@Override
 	@WebMethod
-	public void salvar(@WebParam(name="categoria") Categoria categoria) {
-		categoriaDao.salvar(categoria);
+	public Categoria salvar(@WebParam(name="categoria") Categoria categoria) {
+		return categoriaDao.salvar(categoria);
 	}
 	
 	@Override

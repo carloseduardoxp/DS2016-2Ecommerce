@@ -10,7 +10,7 @@ import br.edu.iftm.model.domain.Categoria;
 public interface ICategoriaService {
 
 	@ValidateOnExecution
-	void salvar(@Valid Categoria categoria);
+	Categoria salvar(@Valid Categoria categoria);
 
 	void atualizar(Categoria categoria);
 

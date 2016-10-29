@@ -19,8 +19,9 @@ public class CategoriaDao implements ICategoriaDao {
 	 */
 	@Override
 	@Transactional
-	public void salvar(Categoria categoria) {
+	public Categoria salvar(Categoria categoria) {
 		entityManager.persist(categoria);
+		return categoria;
 	}
 	
 	/* (non-Javadoc)

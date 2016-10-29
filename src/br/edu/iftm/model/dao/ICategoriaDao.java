@@ -6,7 +6,7 @@ import br.edu.iftm.model.domain.Categoria;
 
 public interface ICategoriaDao {
 
-	void salvar(Categoria categoria);
+	Categoria salvar(Categoria categoria);
 
 	void atualizar(Categoria categoria);
 

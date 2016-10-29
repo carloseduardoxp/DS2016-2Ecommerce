@@ -27,8 +27,8 @@ public class CategoriaService implements ICategoriaService {
 
 	@Override
 	@POST
-	public void salvar(Categoria categoria) {
-		categoriaDao.salvar(categoria);
+	public Categoria salvar(Categoria categoria) {
+		return categoriaDao.salvar(categoria);
 	}
 
 	@Override
