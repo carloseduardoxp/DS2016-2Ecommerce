@@ -41,8 +41,18 @@ app.controller('categoriaControl',function($scope,$http) {
 	}
 	
 	$scope.excluir = function() {
-		$scope.categorias.splice($scope.categorias.indexOf($scope.categoria), 1);	
-		$scope.novo();  		
+		if ($scope.categoria.codigo == undefined || $scope.categoria.codigo == '') {
+			$scope.mensagens.push('Selecione uma Categoria');
+		} else {
+			$http.delete(url+"/"+$scope.categoria.codigo).success(function() {
+				$scope.categorias.splice($scope.categorias.indexOf($scope.categoria), 1);	
+				$scope.novo();
+				$scope.mensagens.push('Categoria excluída com sucesso');
+			}).error(function (erro) {
+				//$scope.mensagens.push('Erro ao salvar Categoria: '+JSON.stringify(erro));
+				$scope.montaMensagemErro(erro.parameterViolations);
+			});
+		}  	
 	}
 	
 	$scope.novo = function () { 
